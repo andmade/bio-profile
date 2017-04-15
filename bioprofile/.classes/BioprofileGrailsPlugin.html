@@ -1,0 +1,179 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: BioprofileGrailsPlugin</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">bioprofile</a> ]
+</div>
+
+<h1>Coverage Summary for Class: BioprofileGrailsPlugin (bioprofile)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">BioprofileGrailsPlugin</td>
+<td class="coverageStat">
+  <span class="percent">
+    50%
+  </span>
+  <span class="absValue">
+    (1/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    66.7%
+  </span>
+  <span class="absValue">
+    (2/ 3)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">BioprofileGrailsPlugin$_doWithSpring_closure1</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    33.3%
+  </span>
+  <span class="absValue">
+    (1/ 3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    50%
+  </span>
+  <span class="absValue">
+    (2/ 4)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package bioprofile
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import grails.plugins.*
+<i>4</i>&nbsp;
+<i>5</i>&nbsp;class BioprofileGrailsPlugin extends Plugin {
+<i>6</i>&nbsp;
+<i>7</i>&nbsp;    // the version or versions of Grails the plugin is designed for
+<i>8</i>&nbsp;    def grailsVersion = &quot;3.2.5 &gt; *&quot;
+<i>9</i>&nbsp;    // resources that are excluded from plugin packaging
+<b class="fc"><i>10</i>&nbsp;    def pluginExcludes = [</b>
+<i>11</i>&nbsp;        &quot;grails-app/views/error.gsp&quot;
+<i>12</i>&nbsp;    ]
+<i>13</i>&nbsp;
+<i>14</i>&nbsp;    // TODO Fill in these fields
+<i>15</i>&nbsp;    def title = &quot;Bioprofile&quot; // Headline display name of the plugin
+<i>16</i>&nbsp;    def author = &quot;Your name&quot;
+<i>17</i>&nbsp;    def authorEmail = &quot;&quot;
+<i>18</i>&nbsp;    def description = &#39;&#39;&#39;\
+<i>19</i>&nbsp;Brief summary/description of the plugin.
+<i>20</i>&nbsp;&#39;&#39;&#39;
+<b class="fc"><i>21</i>&nbsp;    def profiles = [&#39;web&#39;]</b>
+<i>22</i>&nbsp;
+<i>23</i>&nbsp;    // URL to the plugin&#39;s documentation
+<i>24</i>&nbsp;    def documentation = &quot;http://grails.org/plugin/bioprofile&quot;
+<i>25</i>&nbsp;
+<i>26</i>&nbsp;    // Extra (optional) plugin metadata
+<i>27</i>&nbsp;
+<i>28</i>&nbsp;    // License: one of &#39;APACHE&#39;, &#39;GPL2&#39;, &#39;GPL3&#39;
+<i>29</i>&nbsp;//    def license = &quot;APACHE&quot;
+<i>30</i>&nbsp;
+<i>31</i>&nbsp;    // Details of company behind the plugin (if there is one)
+<i>32</i>&nbsp;//    def organization = [ name: &quot;My Company&quot;, url: &quot;http://www.my-company.com/&quot; ]
+<i>33</i>&nbsp;
+<i>34</i>&nbsp;    // Any additional developers beyond the author specified above.
+<i>35</i>&nbsp;//    def developers = [ [ name: &quot;Joe Bloggs&quot;, email: &quot;joe@bloggs.net&quot; ]]
+<i>36</i>&nbsp;
+<i>37</i>&nbsp;    // Location of the plugin&#39;s issue tracker.
+<i>38</i>&nbsp;//    def issueManagement = [ system: &quot;JIRA&quot;, url: &quot;http://jira.grails.org/browse/GPMYPLUGIN&quot; ]
+<i>39</i>&nbsp;
+<i>40</i>&nbsp;    // Online location of the plugin&#39;s browseable source code.
+<i>41</i>&nbsp;//    def scm = [ url: &quot;http://svn.codehaus.org/grails-plugins/&quot; ]
+<i>42</i>&nbsp;
+<b class="nc"><i>43</i>&nbsp;    Closure doWithSpring() { {-&gt;</b>
+<i>44</i>&nbsp;            // TODO Implement runtime spring config (optional)
+<i>45</i>&nbsp;        }
+<i>46</i>&nbsp;    }
+<i>47</i>&nbsp;
+<i>48</i>&nbsp;    void doWithDynamicMethods() {
+<i>49</i>&nbsp;        // TODO Implement registering dynamic methods to classes (optional)
+<i>50</i>&nbsp;    }
+<i>51</i>&nbsp;
+<i>52</i>&nbsp;    void doWithApplicationContext() {
+<i>53</i>&nbsp;        // TODO Implement post initialization spring config (optional)
+<i>54</i>&nbsp;    }
+<i>55</i>&nbsp;
+<i>56</i>&nbsp;    void onChange(Map&lt;String, Object&gt; event) {
+<i>57</i>&nbsp;        // TODO Implement code that is executed when any artefact that this plugin is
+<i>58</i>&nbsp;        // watching is modified and reloaded. The event contains: event.source,
+<i>59</i>&nbsp;        // event.application, event.manager, event.ctx, and event.plugin.
+<i>60</i>&nbsp;    }
+<i>61</i>&nbsp;
+<i>62</i>&nbsp;    void onConfigChange(Map&lt;String, Object&gt; event) {
+<i>63</i>&nbsp;        // TODO Implement code that is executed when the project configuration changes.
+<i>64</i>&nbsp;        // The event is the same as for &#39;onChange&#39;.
+<i>65</i>&nbsp;    }
+<i>66</i>&nbsp;
+<i>67</i>&nbsp;    void onShutdown(Map&lt;String, Object&gt; event) {
+<i>68</i>&nbsp;        // TODO Implement code that is executed when the application shuts down (optional)
+<i>69</i>&nbsp;    }
+<i>70</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2017-04-15 12:42</div>
+</div>
+</body>
+</html>

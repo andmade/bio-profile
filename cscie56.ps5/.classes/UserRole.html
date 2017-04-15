@@ -1,0 +1,267 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: UserRole</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">cscie56.ps5</a> ]
+</div>
+
+<h1>Coverage Summary for Class: UserRole (cscie56.ps5)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">UserRole</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 9)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 16)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">UserRole$__clinit__closure5</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">UserRole$__clinit__closure5$_closure9</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">UserRole$__clinit__closure5$_closure9$_closure10</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">UserRole$__clinit__closure6</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">UserRole$_criteriaFor_closure1$_closure7</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 14)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 25)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package cscie56.ps5
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import grails.gorm.DetachedCriteria
+<i>4</i>&nbsp;import groovy.transform.ToString
+<i>5</i>&nbsp;
+<i>6</i>&nbsp;import org.apache.commons.lang.builder.HashCodeBuilder
+<i>7</i>&nbsp;
+<i>8</i>&nbsp;@ToString(cache=true, includeNames=true, includePackage=false)
+<i>9</i>&nbsp;class UserRole implements Serializable {
+<i>10</i>&nbsp;
+<i>11</i>&nbsp;	private static final long serialVersionUID = 1
+<i>12</i>&nbsp;
+<i>13</i>&nbsp;	User user
+<i>14</i>&nbsp;	Role role
+<i>15</i>&nbsp;
+<i>16</i>&nbsp;	@Override
+<i>17</i>&nbsp;	boolean equals(other) {
+<b class="nc"><i>18</i>&nbsp;		if (other instanceof UserRole) {</b>
+<b class="nc"><i>19</i>&nbsp;			other.userId == user?.id &amp;&amp; other.roleId == role?.id</b>
+<i>20</i>&nbsp;		}
+<i>21</i>&nbsp;	}
+<i>22</i>&nbsp;
+<i>23</i>&nbsp;	@Override
+<i>24</i>&nbsp;	int hashCode() {
+<b class="nc"><i>25</i>&nbsp;		def builder = new HashCodeBuilder()</b>
+<b class="nc"><i>26</i>&nbsp;		if (user) builder.append(user.id)</b>
+<b class="nc"><i>27</i>&nbsp;		if (role) builder.append(role.id)</b>
+<b class="nc"><i>28</i>&nbsp;		builder.toHashCode()</b>
+<i>29</i>&nbsp;	}
+<i>30</i>&nbsp;
+<i>31</i>&nbsp;	static UserRole get(long userId, long roleId) {
+<b class="nc"><i>32</i>&nbsp;		criteriaFor(userId, roleId).get()</b>
+<i>33</i>&nbsp;	}
+<i>34</i>&nbsp;
+<i>35</i>&nbsp;	static boolean exists(long userId, long roleId) {
+<b class="nc"><i>36</i>&nbsp;		criteriaFor(userId, roleId).count()</b>
+<i>37</i>&nbsp;	}
+<i>38</i>&nbsp;
+<i>39</i>&nbsp;	private static DetachedCriteria criteriaFor(long userId, long roleId) {
+<b class="nc"><i>40</i>&nbsp;		UserRole.where {</b>
+<b class="nc"><i>41</i>&nbsp;			user == User.load(userId) &amp;&amp;</b>
+<b class="nc"><i>42</i>&nbsp;			role == Role.load(roleId)</b>
+<i>43</i>&nbsp;		}
+<i>44</i>&nbsp;	}
+<i>45</i>&nbsp;
+<i>46</i>&nbsp;	static UserRole create(User user, Role role) {
+<b class="nc"><i>47</i>&nbsp;		def instance = new UserRole(user: user, role: role)</b>
+<b class="nc"><i>48</i>&nbsp;		instance.save()</b>
+<b class="nc"><i>49</i>&nbsp;		instance</b>
+<i>50</i>&nbsp;	}
+<i>51</i>&nbsp;
+<i>52</i>&nbsp;	static boolean remove(User u, Role r) {
+<b class="nc"><i>53</i>&nbsp;		if (u != null &amp;&amp; r != null) {</b>
+<b class="nc"><i>54</i>&nbsp;			UserRole.where { user == u &amp;&amp; role == r }.deleteAll()</b>
+<i>55</i>&nbsp;		}
+<i>56</i>&nbsp;	}
+<i>57</i>&nbsp;
+<i>58</i>&nbsp;	static int removeAll(User u) {
+<b class="nc"><i>59</i>&nbsp;		u == null ? 0 : UserRole.where { user == u }.deleteAll()</b>
+<i>60</i>&nbsp;	}
+<i>61</i>&nbsp;
+<i>62</i>&nbsp;	static int removeAll(Role r) {
+<b class="nc"><i>63</i>&nbsp;		r == null ? 0 : UserRole.where { role == r }.deleteAll()</b>
+<i>64</i>&nbsp;	}
+<i>65</i>&nbsp;
+<i>66</i>&nbsp;	static constraints = {
+<b class="nc"><i>67</i>&nbsp;		role validator: { Role r, UserRole ur -&gt;</b>
+<b class="nc"><i>68</i>&nbsp;			if (ur.user?.id) {</b>
+<b class="nc"><i>69</i>&nbsp;				UserRole.withNewSession {</b>
+<b class="nc"><i>70</i>&nbsp;					if (UserRole.exists(ur.user.id, r.id)) {</b>
+<b class="nc"><i>71</i>&nbsp;						return [&#39;userRole.exists&#39;]</b>
+<i>72</i>&nbsp;					}
+<i>73</i>&nbsp;				}
+<i>74</i>&nbsp;			}
+<i>75</i>&nbsp;		}
+<i>76</i>&nbsp;	}
+<i>77</i>&nbsp;
+<i>78</i>&nbsp;	static mapping = {
+<b class="nc"><i>79</i>&nbsp;		id composite: [&#39;user&#39;, &#39;role&#39;]</b>
+<b class="nc"><i>80</i>&nbsp;		version false</b>
+<i>81</i>&nbsp;	}
+<i>82</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2017-04-15 12:42</div>
+</div>
+</body>
+</html>
