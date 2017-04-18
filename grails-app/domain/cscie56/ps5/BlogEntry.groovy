@@ -3,20 +3,26 @@ package cscie56.ps5
 class BlogEntry {
 
     String text
+    String title
     Date dateCreated
-    Date datePublished
-    Boolean published
+    Date datePublished = null
+    Boolean published = false
     User poster
 
     static transients = ['comments']
 
+    def beforeInsert() {
+        if(this.published && this.datePublished == null) {this.datePublished = new Date()}
+    }
+
+    def beforeUpdate() {
+        beforeInsert()
+    }
+
     static constraints = {
         text(blank:false)
-        dateCreated(max: new Date())
-        datePublished(validator: {val,obj,errors->
-            if (val < obj.dateCreated) {
-                errors.rejectValue('datePublished',"Error: datePublished cannot be after dateCreated")
-            }
+        title(blank:false)
+        datePublished(nullable: true, validator: {val,obj,errors->
             if (val > new Date()) {
                 errors.rejectValue('datePublished',"Error: datePublished cannot be in the future")
             }

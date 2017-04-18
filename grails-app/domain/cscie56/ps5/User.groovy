@@ -1,5 +1,6 @@
 package cscie56.ps5
 
+import cscie56.ps3.Person
 import groovy.transform.EqualsAndHashCode
 import groovy.transform.ToString
 import org.grails.datastore.mapping.document.config.Collection
@@ -25,6 +26,8 @@ class User implements Serializable {
 	Integer height
 	Integer weight
 	String universityAttended
+    Person person
+
 
 	Set<Role> getAuthorities() {
 		UserRole.findAllByUser(this)*.role
@@ -49,6 +52,8 @@ class User implements Serializable {
 	static constraints = {
 		password blank: false, password: true
 		username blank: false, unique: true
+        person nullable: true
+
 	}
 
 	List<BlogEntry> getBlogEntries() {

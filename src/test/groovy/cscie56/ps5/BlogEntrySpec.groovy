@@ -22,7 +22,14 @@ class BlogEntrySpec extends Specification {
 
     void "test text constraints"() {
         when:
-        def bg1 = new BlogEntry(text: "", poster: testuser, dateCreated: new Date()-1, datePublished: new Date(), published:false)
+        def bg1 = new BlogEntry(text: "", title:"Title here", poster: testuser, dateCreated: new Date()-1, datePublished: new Date(), published:false)
+        then:
+        !bg1.validate()
+    }
+
+    void "test title constraints"() {
+        when:
+        def bg1 = new BlogEntry(text: "Blog content", title:"", poster: testuser, dateCreated: new Date()-1, datePublished: new Date(), published:false)
         then:
         !bg1.validate()
     }
@@ -36,7 +43,7 @@ class BlogEntrySpec extends Specification {
 
     void "test BlogEntry creation"() {
         when:
-        def bg1 = new BlogEntry(text: "Blog Content", poster: testuser, dateCreated: new Date()-1, datePublished: new Date(), published:false)
+        def bg1 = new BlogEntry(text: "Blog Content", title:"Title here", poster: testuser, dateCreated: new Date()-1, datePublished: new Date(), published:false)
         then:
         bg1.validate()
     }
